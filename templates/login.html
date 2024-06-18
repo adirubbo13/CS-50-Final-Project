@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <img src="static/HighlandLogo.jpeg" alt="Logo">
+    <h1>Login</h1>
+    <form method="post">
+        Last name: <input type="text" name="last_name"><br>
+        <input type="submit" value="Login">
+    </form>
+    {% if rounds %}
+    <h2>Your Rounds</h2>
+    <table class="center-table">
+        <tr>
+            <th>Date</th>
+            <th>Front Nine Score</th>
+            <th>Back Nine Score</th>
+            <th>Total Score</th>
+        </tr>
+        {% for round in rounds %}
+        <tr>
+            <td>{{ round.Date }}</td>
+            <td>{{ round.front_nine_score }}</td>
+            <td>{{ round.back_nine_score }}</td>
+            <td>{{ round.total_score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

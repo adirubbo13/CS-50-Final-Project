@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+    <title>Golf Scorecard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <img src="static/HighlandLogo.jpeg" alt="Logo">
+    <h1>Welcome to the Golf Scorecard</h1>
+    <h2>Main Menu</h2>
+    <button><a href="{{ url_for('register') }}">Register</a></button>
+    <br></br>
+    <button><a href="{{ url_for('login') }}">Login</a></button>
+    <br></br>
+    <button><a href="{{ url_for('report') }}">Report a round</a></button>
+</body>
+</html>
